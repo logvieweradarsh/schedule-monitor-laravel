@@ -1,0 +1,60 @@
+{
+    "name": "logvieweradarsh/schedule-monitor-laravel",
+    "description": "Monitor scheduled tasks in a Laravel for cron",
+    "keywords": [
+        "laravel-schedule-monitor"
+    ],
+    "license": "MIT",
+    "authors": [
+            {
+                "name": "Adarsh Mishra",
+                "email": "logvieweradarsh@gmail.com"
+            }
+    ],
+    "require": {
+        "php": "^7.3",
+        "illuminate/bus": "self.version",
+        "lorisleiva/cron-translator": "^0.1.1"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "laravel/legacy-factories": "^1.0.4",
+        "ohdearapp/ohdear-php-sdk": "^3.0",
+        "orchestra/testbench": "^5.0|^6.0",
+        "phpunit/phpunit": "^9.0",
+        "spatie/phpunit-snapshot-assertions": "^4.2",
+        "spatie/test-time": "^1.2",
+        "vimeo/psalm": "^3.11"
+    },
+    "suggest": {
+        "ohdearapp/ohdear-php-sdk": "Needed to sync your schedule with Oh Dear"
+    },
+    "autoload": {
+        "psr-4": {
+            "logvieweradarsh\\ScheduleMonitor\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "logvieweradarsh\\ScheduleMonitor\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "psalm": "vendor/bin/psalm",
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "logvieweradarsh\\ScheduleMonitor\\ScheduleMonitorServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
